@@ -16,7 +16,7 @@ class WordCell: UICollectionViewCell {
     
     let wordLabel: UILabel = {
         let label = UILabel()
-        label.text = "RIO WEBER"
+        label.text = "TEST TEST TEST"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,7 +44,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .blue
+        collectionView?.backgroundColor = .white
         collectionView?.register(WordCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerId)
@@ -69,12 +69,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         if kind == UICollectionElementKindSectionHeader {
             // Define Header
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-            header.backgroundColor = .green
+            header.backgroundColor = .blue
             return header
         } else {
             // Define Footer
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerId, for: indexPath)
-            footer.backgroundColor = .purple
+            footer.backgroundColor = .green
             return footer
         }
     }

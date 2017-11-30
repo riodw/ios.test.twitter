@@ -13,9 +13,9 @@ class UserCell: DatasourceCell {
     override var datasourceItem: Any? {
         didSet {
             guard let user = datasourceItem as? User else { return }
-            nameLabel.text = user.name_first + " " + user.name_last
-            usernameLabel.text = user.type + " - " + user.role
-            bioTextView.text = user.email
+            nameLabel.text = user.name
+            usernameLabel.text = user.username
+            bioTextView.text = user.bioText
             profileImageView.image = user.profileImage
         }
     }
@@ -45,32 +45,35 @@ class UserCell: DatasourceCell {
     
     let bioTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "Medtrics User Details..."
+        textView.text = "iPhone, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!"
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.backgroundColor = .clear
         return textView
     }()
     
     let followButton: UIButton = {
-        let buttonBlue = UIColor(r: 237, g: 96, b: 26)
+        let twitterBlue = UIColor(r: 61, g: 167, b: 244)
         let button = UIButton()
         button.layer.cornerRadius = 5
-        button.layer.borderColor = buttonBlue.cgColor
+        button.layer.borderColor = twitterBlue.cgColor
         button.layer.borderWidth = 1
         
         //        button.setImage(#imageLiteral(resourceName: "edit"), for: .normal)
         //        button.imageView?.contentMode = .scaleAspectFit
         //        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
         
-        button.setTitle("Edit", for: .normal)
+        button.setTitle("Follow", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(buttonBlue, for: .normal)
+        button.setTitleColor(twitterBlue, for: .normal)
+        button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
         //        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
         return button
     }()
     
     override func setupViews() {
         super.setupViews()
+        
+        backgroundColor = .white
         
         separatorLineView.isHidden = false
         separatorLineView.backgroundColor = UIColor(r: 220, g: 220, b: 220)
