@@ -28,58 +28,10 @@ class HomeDatasourceController: DatasourceController {
 //        let homeDatasource = HomeDatasource()
 //        self.datasource = homeDatasource
         
-        fetchHomeFeed()
-    }
-    
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
-    class Home: JSONDecodable {
-        
-        let users: [User]
-        
-        required init(json: JSON) throws {var users = [User]()
-            
-            let array = json["users"].array
-            for userJson in array! {
-                let name = userJson["name"].stringValue
-                let username = userJson["username"].stringValue
-                let bio = userJson["bio"].stringValue
-                
-                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
-                
-                users.append(user)
-            }
-            
-            self.users = users
-        }
-    }
-    
-    class JSONError: JSONDecodable {
-        required init(json: JSON) throws {
-            print("JSON EROR")
-        }
-    }
-        
-    fileprivate func fetchHomeFeed() {
-        // start our json fetch
-        
-        let request: APIRequest<HomeDatasource, JSONError> = tron.request("/twitter/home")
-        
-        request.perform(withSuccess: { (homeDatasource) in
-            print("Successfully fetched our json objects")
-            
-            print(homeDatasource.users.count)
-            
+//        fetchHomeFeed()
+        Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
             self.datasource = homeDatasource
-            
-        }) { (err) in
-            print("Failed to fetch json...", err)
         }
-        
-        // this is a lot of code, use TRON instead
-//        URLSession.shared.dataTask(with: <#T##URL#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
-        
-//        print(123)
     }
     
     
