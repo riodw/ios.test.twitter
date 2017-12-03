@@ -16,11 +16,16 @@ class HomeDatasource: Datasource, JSONDecodable {
     
     
     required init(json: JSON) throws {
-        let userJsonArray = json["users"].array
-        self.users = userJsonArray!.map({return User(json: $0)})
+        guard let userJsonArray = json["users"].array else {
+            throw NSError(domain: "com.rioweber", code: 1, userInfo: [NSLocalizedDescriptionKey: "'users' not valid in JSON."])
+        }
         
-        let tweetsJsonArray = json["tweets"].array
-        self.tweets = tweetsJsonArray!.map({return Tweet(json: $0)})
+        guard let tweetsJsonArray = json["tweets"].array else {
+            throw NSError(domain: "com.rioweber", code: 1, userInfo: [NSLocalizedDescriptionKey: "'tweets' not valid in JSON."])
+        }
+        
+        self.users = userJsonArray.map({return User(json: $0)})
+        self.tweets = tweetsJsonArray.map({return Tweet(json: $0)})
     }
     
     let tweets: [Tweet]
