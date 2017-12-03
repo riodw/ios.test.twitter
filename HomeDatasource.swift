@@ -17,9 +17,7 @@ class HomeDatasource: Datasource {
         
         let chrisUser = User(name: "Chris Tokodi", username: "@chris", bioText: "I'm CEO Bitch.", profileImage: #imageLiteral(resourceName: "chris"))
         
-        let newUser = User(name: "User Name", username: "@newuser", bioText: "THisistotestthatthetextinthisfieldcanbeverrrrrylongandsupportmultiple characters and not worry about text being to long in the case of text being too long. THis is to test that the text in this field can be verrrrry long and support multiple characters and not worry about text being to long in the case of text being too long.", profileImage: #imageLiteral(resourceName: "rio"))
-        
-        return [rioUser, toshUser, chrisUser, newUser]
+        return [rioUser, toshUser, chrisUser]
     }()
     
     let tweets: [Tweet] = {
@@ -27,8 +25,7 @@ class HomeDatasource: Datasource {
         
         let tweet = Tweet(user: rioUser, message: "This will be twitter let tweet = Tweet(user: rioUser, message: This will be twitter let tweet = Tweet(user: rioUser, message: This will be twitter ")
         
-        
-         let tweet2 = Tweet(user: rioUser, message: "This will be twitter let tweet = Tweet(user: rioUser, message: This will be twitter let tweet = Tweet(user: rioUser, message: This will be twitter ")
+         let tweet2 = Tweet(user: rioUser, message: "This is the second tweet message for our sample project. Very very exciting message....")
         
         return[tweet, tweet2]
     }()

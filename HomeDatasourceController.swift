@@ -10,6 +10,10 @@ import LBTAComponents
 
 class HomeDatasourceController: DatasourceController {
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,14 +34,14 @@ class HomeDatasourceController: DatasourceController {
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let user = self.datasource?.item(indexPath) as? User {
-            // user.email
+            //let's get an estimation of the height of our cell based on user.bioText
             // Get height of cell based on height
             let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
             
             let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
             let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
             
-            let estimatedFrame = NSString(string: user.username).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
             
             return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
         }

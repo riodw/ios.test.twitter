@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		06D768C8FE8FC8954CD439A5 /* Pods_Project_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4A17480394E61785FA08E3 /* Pods_Project_1.framework */; };
 		D710F19A1F7F2D66008CC8BA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D710F1991F7F2D66008CC8BA /* Tweet.swift */; };
-		D747F5CA1F7DB58700AEB72C /* TweetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747F5C91F7DB58700AEB72C /* TweetsCell.swift */; };
+		D747F5CA1F7DB58700AEB72C /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747F5C91F7DB58700AEB72C /* TweetCell.swift */; };
 		D75F27EA1F7B405100417F41 /* HomeDatasourceController+navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F27E91F7B405100417F41 /* HomeDatasourceController+navbar.swift */; };
 		D7C8DCCF1F0F0C7500049571 /* HomeDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8DCCE1F0F0C7500049571 /* HomeDatasourceController.swift */; };
-		D7C8DCD51F0F182600049571 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8DCD41F0F182600049571 /* Cells.swift */; };
+		D7C8DCD51F0F182600049571 /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8DCD41F0F182600049571 /* UserHeaderFooter.swift */; };
 		D7C8DCD71F0F186A00049571 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8DCD61F0F186A00049571 /* HomeDatasource.swift */; };
 		D7F717931F17179F000967B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F717921F17179F000967B1 /* User.swift */; };
 		D7F717951F172498000967B1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F717941F172498000967B1 /* UserCell.swift */; };
@@ -25,10 +25,10 @@
 /* Begin PBXFileReference section */
 		C54FF06AD9C7A2ED4D1DAD43 /* Pods-Project-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-1/Pods-Project-1.debug.xcconfig"; sourceTree = "<group>"; };
 		D710F1991F7F2D66008CC8BA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		D747F5C91F7DB58700AEB72C /* TweetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsCell.swift; sourceTree = "<group>"; };
+		D747F5C91F7DB58700AEB72C /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		D75F27E91F7B405100417F41 /* HomeDatasourceController+navbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeDatasourceController+navbar.swift"; sourceTree = "<group>"; };
 		D7C8DCCE1F0F0C7500049571 /* HomeDatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasourceController.swift; sourceTree = "<group>"; };
-		D7C8DCD41F0F182600049571 /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		D7C8DCD41F0F182600049571 /* UserHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		D7C8DCD61F0F186A00049571 /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		D7F717921F17179F000967B1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D7F717941F172498000967B1 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -69,6 +69,7 @@
 				D75F27E91F7B405100417F41 /* HomeDatasourceController+navbar.swift */,
 			);
 			name = Controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7C8DCD21F0F17B600049571 /* Model */ = {
@@ -79,24 +80,23 @@
 				D710F1991F7F2D66008CC8BA /* Tweet.swift */,
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7C8DCD31F0F17BD00049571 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D7C8DCD41F0F182600049571 /* Cells.swift */,
+				D7C8DCD41F0F182600049571 /* UserHeaderFooter.swift */,
 				D7F717941F172498000967B1 /* UserCell.swift */,
-				D747F5C91F7DB58700AEB72C /* TweetsCell.swift */,
+				D747F5C91F7DB58700AEB72C /* TweetCell.swift */,
 			);
 			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7F809AA1F0AF99D003E0102 = {
 			isa = PBXGroup;
 			children = (
-				D7C8DCD31F0F17BD00049571 /* View */,
-				D7C8DCD21F0F17B600049571 /* Model */,
-				D7C8DCD11F0F15F700049571 /* Controller */,
 				D7F809B51F0AF99D003E0102 /* Project-1 */,
 				D7F809B41F0AF99D003E0102 /* Products */,
 				FD21B7257B2307EC2BA3C00D /* Pods */,
@@ -115,6 +115,9 @@
 		D7F809B51F0AF99D003E0102 /* Project-1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7C8DCD21F0F17B600049571 /* Model */,
+				D7C8DCD31F0F17BD00049571 /* View */,
+				D7C8DCD11F0F15F700049571 /* Controller */,
 				D7F809B61F0AF99D003E0102 /* AppDelegate.swift */,
 				D7F809C81F0BF87A003E0102 /* HomeController.swift */,
 				D7F809BD1F0AF99D003E0102 /* Assets.xcassets */,
@@ -260,9 +263,9 @@
 				D710F19A1F7F2D66008CC8BA /* Tweet.swift in Sources */,
 				D7F809B71F0AF99D003E0102 /* AppDelegate.swift in Sources */,
 				D7F717931F17179F000967B1 /* User.swift in Sources */,
-				D7C8DCD51F0F182600049571 /* Cells.swift in Sources */,
+				D7C8DCD51F0F182600049571 /* UserHeaderFooter.swift in Sources */,
 				D7C8DCCF1F0F0C7500049571 /* HomeDatasourceController.swift in Sources */,
-				D747F5CA1F7DB58700AEB72C /* TweetsCell.swift in Sources */,
+				D747F5CA1F7DB58700AEB72C /* TweetCell.swift in Sources */,
 				D75F27EA1F7B405100417F41 /* HomeDatasourceController+navbar.swift in Sources */,
 				D7F809C91F0BF87A003E0102 /* HomeController.swift in Sources */,
 				D7F717951F172498000967B1 /* UserCell.swift in Sources */,
@@ -385,7 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9VQK2KEKWF;
 				INFOPLIST_FILE = "Project-1/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medtrics.project-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,7 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9VQK2KEKWF;
 				INFOPLIST_FILE = "Project-1/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medtrics.project-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";

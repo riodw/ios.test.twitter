@@ -9,6 +9,8 @@
 import UIKit
 
 class WordCell: UICollectionViewCell {
+    
+    //this gets called when a cell is dequeued
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -27,8 +29,8 @@ class WordCell: UICollectionViewCell {
         addSubview(wordLabel)
         wordLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         wordLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        wordLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         wordLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        wordLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +53,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,16 +65,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return CGSize(width: view.frame.width, height: 50)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        // Return Kind
         if kind == UICollectionElementKindSectionHeader {
-            // Define Header
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
             header.backgroundColor = .blue
             return header
         } else {
-            // Define Footer
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerId, for: indexPath)
             footer.backgroundColor = .green
             return footer
