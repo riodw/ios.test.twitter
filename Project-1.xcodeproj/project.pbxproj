@@ -115,8 +115,8 @@
 		D7F809B51F0AF99D003E0102 /* Project-1 */ = {
 			isa = PBXGroup;
 			children = (
-				D7C8DCD21F0F17B600049571 /* Model */,
 				D7C8DCD31F0F17BD00049571 /* View */,
+				D7C8DCD21F0F17B600049571 /* Model */,
 				D7C8DCD11F0F15F700049571 /* Controller */,
 				D7F809B61F0AF99D003E0102 /* AppDelegate.swift */,
 				D7F809C81F0BF87A003E0102 /* HomeController.swift */,
