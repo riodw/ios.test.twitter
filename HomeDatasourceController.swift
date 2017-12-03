@@ -23,12 +23,6 @@ class HomeDatasourceController: DatasourceController {
         
         setupNavigationBarItems()
         
-        // collectionView?.backgroundColor = .red
-        
-//        let homeDatasource = HomeDatasource()
-//        self.datasource = homeDatasource
-        
-//        fetchHomeFeed()
         Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
             self.datasource = homeDatasource
         }
