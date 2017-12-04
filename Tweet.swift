@@ -15,7 +15,7 @@ struct Tweet {
     
     init(json: JSON) {
         let userJson = json["user"]
-        self.user = User(json: json)
+        self.user = User(json: userJson)
         
         self.message = json["message"].stringValue
     }

@@ -26,6 +26,9 @@ class HomeDatasource: Datasource, JSONDecodable {
         
         self.users = userJsonArray.map({return User(json: $0)})
         self.tweets = tweetsJsonArray.map({return Tweet(json: $0)})
+        
+        self.users = usersJsonArray.decode()
+        self.tweets = tweetsJsonArray.decode()
     }
     
     let tweets: [Tweet]
